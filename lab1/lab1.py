@@ -19,14 +19,6 @@ def init() -> None:
 
 def printBoard() -> None:
     """ prints the board on the screen based on the values in the board list """
-    #print("    ")
-    #print("      |   |      x | x | x")
-    #print("    --+---+--    --+---+--")
-    #print("      |   |      x | x | x")
-    #print("    --+---+--    --+---+--")
-    #print("      |   |      x | x | x")
-    #print("    ")
-    #for i in board:
     print(f"    ")
     print(f"    {board[0]} | {board[1]} | {board[2]}    0 | 1 | 2")
     print(f"    --+---+--    --+---+--")
@@ -77,7 +69,7 @@ def computerNextMove() -> None:
     """ Computer randomly chooses a valid cell, 
         and prints the info and the updated board 
     """
-    computerMove = -1
+    computerMove : int = -1
     while(True):
         computerMove = random.randint(0,8) # computer picks a random cell on board
         # check if the cell is already taken
