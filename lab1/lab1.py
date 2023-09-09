@@ -35,7 +35,7 @@ def printBoard() -> None:
     print(f"    {board[6]} | {board[7]} | {board[8]}    6 | 7 | 8")
     print(f"    ")
 
-def validCellNum(userInput) -> None:
+def validCellNum(userInput) -> bool:
     """ checks if userInput is a valid cellNum
         cellNum must be an integer, between 0 and 8, and not already taken on the board
         returns True if userInput is valid, else False
@@ -67,7 +67,7 @@ def playerNextMove() -> None:
         error checks that the input is a valid cell number 
     """
     while(True):
-        userInput = input("Next move for X (state a valid cell num):")
+        userInput = input("Next move for X (state a valid cell num): ")
         if(validCellNum(userInput)):
             board[int(userInput)] = 'X'
             printBoard()
@@ -77,11 +77,47 @@ def computerNextMove() -> None:
     """ Computer randomly chooses a valid cell, 
         and prints the info and the updated board 
     """
-    pass #To Implement
+    computerMove = -1
+    while(True):
+        computerMove = random.randint(0,8) # computer picks a random cell on board
+        # check if the cell is already taken
+        if(board[computerMove] == ' '):
+            board[int(computerMove)] = 'O'
+            printBoard()
+            print(f"Computer chose cell {computerMove}")
+            break
 
 def hasWon(who: str) -> bool:
     """ returns True if who (being passed 'X' or 'O') has won, False otherwise """
-    pass #To Implement
+    # check verticals, from left to right
+    if (board[0] == who and board[3] == who and board[6] == who):
+        return True
+    elif (board[1] == who and board[4] == who and board[7] == who):
+        return True
+    elif (board[2] == who and board[5] == who and board[8] == who):
+        return True
+    # check horizontals, from top to bottom
+    elif (board[0] == who and board[1] == who and board[2] == who):
+        return True
+    elif (board[3] == who and board[4] == who and board[5] == who):
+        return True
+    elif (board[6] == who and board[7] == who and board[8] == who):
+        return True
+    # check diagonals
+    elif (board[0] == who and board[4] == who and board[8] == who):
+        return True
+    elif (board[2] == who and board[4] == who and board[6] == who):
+        return True
+    else:
+        return False
+ 
+
+def draw() -> bool:
+    """ checks if the board is full (i.e. it's a draw) """
+    for i in board:
+        if(i == ' '):
+            return False
+    return True
 
 def terminate(who: str) -> bool:
     """ returns True if who (being passed 'X' or 'O') has won or if it's a draw, False otherwise;
@@ -90,7 +126,17 @@ def terminate(who: str) -> bool:
                 "You lost! Thanks for playing." or 
                 "A draw! Thanks for playing."  
     """
-    pass #To Implement
+    if (who == 'X' and hasWon('X')):
+        print("You won! Thanks for playing.")
+        return True
+    elif (who == 'O' and hasWon('O')):
+        print("You lost! Thanks for playing.")
+        return True
+    elif (draw()):
+        print("A draw! Thanks for playing.")
+        return True
+    else:
+        return False
 
 if __name__ == "__main__":
     # Use as is. 
