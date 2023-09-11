@@ -75,8 +75,8 @@ def computerNextMove() -> None:
         # check if the cell is already taken
         if(board[computerMove] == ' '):
             board[int(computerMove)] = 'O'
-            printBoard()
             print(f"Computer chose cell {computerMove}")
+            printBoard()
             break
 
 def hasWon(who: str) -> bool:
