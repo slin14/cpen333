@@ -40,10 +40,13 @@ class Rational:
         """adds 'this' rational to secondRational
            returns the result as a rational number (type Rational)
         """     
-        # to implement
+        # [implemented]
+        # strategy: find common denominator = 1st denom * 2nd denom
+        # numerator = (1st num * 2nd denom) + (2nd num * 1st denum)
         num = self.numerator * secondRational.denominator + secondRational.numerator * self.denominator
         denom = self.denominator * secondRational.denominator
-        result = Rational(num, denom)
+        # result is converted to the lowest form by the Rational class initiator
+        result = Rational(num, denom) 
         return result
 
     
@@ -51,9 +54,12 @@ class Rational:
         """subtracts secondRational from 'this' rational to 
            returns the result as a rational number (type Rational)
         """ 
-        # to implement
+        # [implemented]
+        # strategy: find common denominator = 1st denom * 2nd denom
+        # numerator = (1st num * 2nd denom) - (2nd num * 1st denum)
         num = self.numerator * secondRational.denominator - secondRational.numerator * self.denominator
         denom = self.denominator * secondRational.denominator
+        # result is converted to the lowest form by the Rational class initiator
         result = Rational(num, denom)
         return result
 
@@ -61,9 +67,11 @@ class Rational:
         """multiplies 'this' rational to secondRational
            returns the result as a rational number (type Rational)
         """ 
-        # to implement
+        # [implemented]
+        # strategy: multiply numerators together, multiply denominators together
         num = self.numerator * secondRational.numerator
         denom = self.denominator * secondRational.denominator
+        # result is converted to the lowest form by the Rational class initiator
         result = Rational(num, denom)
         return result
 
@@ -71,9 +79,11 @@ class Rational:
         """divides 'this' rational by secondRational
            returns the result as a rational number (type Rational)
         """ 
-        # to implement
+        # [implemented]
+        # strategy: multiply the 1st rational by the reciprocal of the 2nd rational
         num = self.numerator * secondRational.denominator
         denom = self.denominator * secondRational.numerator
+        # result is converted to the lowest form by the Rational class initiator
         result = Rational(num, denom)
         return result
 
@@ -83,14 +93,14 @@ class Rational:
             if 'this' rational is an integer, it must not show any denominator 
             if denominator is 0, it just returns "NaN" (not a number)
         """ 
-        # to implement
-        if self.denominator == 0:
+        # [implemented]
+        if self.denominator == 0:    # if denominator is 0 -> NaN
             return "NaN"
-        elif self.numerator == 0:
+        elif self.numerator == 0:    # if numerator is 0 -> just 0
             return "0"
-        elif self.denominator == 1:
+        elif self.denominator == 1:  # if denominator is 1 -> just numerator
             return f"{self.numerator}"
-        else:
+        else:                        # all other cases -> <numerator>/<denominator>
             return f"{self.numerator}/{self.denominator}"
 
 class GUI:
@@ -156,7 +166,7 @@ class GUI:
     def add(self): 
         (rational1, rational2) = self.getBothRational()
         result = rational1.add(rational2)
-        # testing - if input box is empty or not int, rational.toString() prints "NaN"
+        # [testing] - if input box is empty or not int, rational.toString() prints "NaN"
         #print(f"rational1: {rational1.toString()}")
         #print(f"rational2: {rational2.toString()}")
         self.result.set(result.toString())
