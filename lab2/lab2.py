@@ -1,6 +1,6 @@
 #Lab 2
-#student name:
-#student number:
+#student name:   Sophie Lin
+#student number: 70196886
 
 from tkinter import *
 #do not import any more modules
@@ -41,24 +41,41 @@ class Rational:
            returns the result as a rational number (type Rational)
         """     
         # to implement
+        num = self.numerator * secondRational.denominator + secondRational.numerator * self.denominator
+        denom = self.denominator * secondRational.denominator
+        result = Rational(num, denom)
+        return result
+
     
     def subtract(self, secondRational):
         """subtracts secondRational from 'this' rational to 
            returns the result as a rational number (type Rational)
         """ 
         # to implement
+        num = self.numerator * secondRational.denominator - secondRational.numerator * self.denominator
+        denom = self.denominator * secondRational.denominator
+        result = Rational(num, denom)
+        return result
 
     def multiply(self, secondRational):
         """multiplies 'this' rational to secondRational
            returns the result as a rational number (type Rational)
         """ 
         # to implement
+        num = self.numerator * secondRational.numerator
+        denom = self.denominator * secondRational.denominator
+        result = Rational(num, denom)
+        return result
 
     def divide(self, secondRational):
         """divides 'this' rational by secondRational
            returns the result as a rational number (type Rational)
         """ 
         # to implement
+        num = self.numerator * secondRational.denominator
+        denom = self.denominator * secondRational.numerator
+        result = Rational(num, denom)
+        return result
 
     def toString(self):
         """ returns a string representation of 'this' rational
@@ -67,6 +84,14 @@ class Rational:
             if denominator is 0, it just returns "NaN" (not a number)
         """ 
         # to implement
+        if self.denominator == 0:
+            return "NaN"
+        elif self.numerator == 0:
+            return "0"
+        elif self.denominator == 1:
+            return f"{self.numerator}"
+        else:
+            return f"{self.numerator}/{self.denominator}"
 
 class GUI:
     """ this class implements the GUI for our program
@@ -131,6 +156,9 @@ class GUI:
     def add(self): 
         (rational1, rational2) = self.getBothRational()
         result = rational1.add(rational2)
+        # testing - if input box is empty or not int, rational.toString() prints "NaN"
+        #print(f"rational1: {rational1.toString()}")
+        #print(f"rational2: {rational2.toString()}")
         self.result.set(result.toString())
     
     def subtract(self):
