@@ -25,7 +25,7 @@ def checkColumn(puzzle: list, column: int):
     check = [0] * len(puzzle) 
     for i in range(len(puzzle)):
         #print(puzzle[i][column])
-        check[puzzle[i][column]-1] = 1
+        check[puzzle[i][column] - 1] = 1
     #print(check)
     #print(f"{bitwiseANDlist(check)}")
     if (bitwiseANDlist(check) == 1):
@@ -47,7 +47,7 @@ def checkRow(puzzle: list, row: int):
     """
     check = [0] * len(puzzle) 
     for i in range(len(puzzle[row])):
-        check[puzzle[row][i]-1] = 1
+        check[puzzle[row][i] - 1] = 1
     #print(check)
     if (bitwiseANDlist(check) == 1):
         validStr = ""
@@ -70,10 +70,38 @@ def checkSubgrid(puzzle: list, subgrid: int):
         
         As usual, this function must not mutate puzzle 
     """
-    pass #To implement
-
+    subgridRows = [ [0, 1, 2],
+                    [0, 1, 2],
+                    [0, 1, 2],
+                    [3, 4, 5],
+                    [3, 4, 5],
+                    [3, 4, 5],
+                    [6, 7, 8],
+                    [6, 7, 8],
+                    [6, 7, 8]
+                  ]
+    subgridCols = [ [0, 1, 2],
+                    [3, 4, 5],
+                    [6, 7, 8],
+                    [0, 1, 2],
+                    [3, 4, 5],
+                    [6, 7, 8],
+                    [0, 1, 2],
+                    [3, 4, 5],
+                    [6, 7, 8]
+                  ]
+    check = [0] * len(puzzle)
+    for row in subgridRows[subgrid]:
+        for col in subgridCols[subgrid]:
+            check[puzzle[row][col] - 1] = 1
+    if (bitwiseANDlist(check) == 1):
+        validStr = ""
+    else:
+        validStr = " not"
+    print(f"Subgrid {subgrid}{validStr} valid")
 
 if __name__ == "__main__":
+    # all valid
     test1 = [ [6, 2, 4, 5, 3, 9, 1, 8, 7],
               [5, 1, 9, 7, 2, 8, 6, 3, 4],
               [8, 3, 7, 6, 1, 4, 2, 9, 5],
@@ -84,18 +112,48 @@ if __name__ == "__main__":
               [4, 9, 6, 1, 8, 2, 5, 7, 3],
               [2, 8, 5, 4, 7, 3, 9, 1, 6]
             ]
-    test2 = [ [6, 2, 4, 5, 3, 9 , 1, 8, 7],
+
+    # all cols not valid
+    test2 = [ [6, 2, 4, 5, 3, 9, 1, 8, 7],
               [5, 1, 9, 7, 2, 8, 6, 3, 4],
-              [8, 3, 7, 6, 1, 4, 2, 9, 5 ],
-              [6, 2, 4, 5, 3, 9 , 1, 8, 7],
+              [8, 3, 7, 6, 1, 4, 2, 9, 5],
+              [6, 2, 4, 5, 3, 9, 1, 8, 7],
               [5, 1, 9, 7, 2, 8, 6, 3, 4],
-              [8, 3, 7, 6, 1, 4, 2, 9, 5 ],
-              [6, 2, 4, 5, 3, 9 , 1, 8, 7],
+              [8, 3, 7, 6, 1, 4, 2, 9, 5],
+              [6, 2, 4, 5, 3, 9, 1, 8, 7],
               [5, 1, 9, 7, 2, 8, 6, 3, 4],
-              [8, 3, 7, 6, 1, 4, 2, 9, 5 ]
+              [8, 3, 7, 6, 1, 4, 2, 9, 5]
             ]
+
+    # all cols not valid
+    # subgrids 2, 4, 6 not valid
+    test3 = [ [6, 2, 4, 5, 3, 9, 1, 9, 7], # row not valid
+              [5, 1, 9, 7, 2, 8, 6, 3, 4],
+              [8, 3, 7, 6, 1, 4, 2, 9, 5],
+              [6, 2, 4, 5, 3, 9, 1, 8, 7],
+              [5, 1, 9, 5, 2, 8, 6, 3, 4], # row not valid
+              [8, 3, 7, 6, 1, 4, 2, 9, 5],
+              [6, 2, 4, 5, 3, 9, 1, 8, 7],
+              [5, 1, 9, 7, 2, 8, 6, 3, 4], 
+              [1, 3, 7, 6, 1, 4, 2, 9, 5]  # row not valid
+            ]
+
+    # cols 1, 7 not valid
+    # rows 2, 8 not valid
+    # subgrids 2, 3, 5 ,8 not valid
+    test4 = [ [6, 2, 4, 5, 3, 9, 1, 8, 7],
+              [5, 1, 9, 7, 2, 8, 6, 3, 4],
+              [8, 3, 7, 6, 1, 4, 9, 9, 5],
+              [1, 2, 3, 8, 6, 5, 7, 4, 9],
+              [9, 5, 8, 2, 4, 7, 3, 6, 1],
+              [7, 6, 2, 3, 9, 1, 4, 5, 8],
+              [3, 7, 1, 9, 5, 6, 8, 4, 2],
+              [4, 9, 6, 1, 8, 2, 5, 7, 3],
+              [2, 8, 5, 4, 7, 3, 2, 1, 6]
+            ]
+
     
-    testcase = test2   #modify here for other testcases
+    testcase = test4   #modify here for other testcases
     SIZE = 9
 
     for col in range(SIZE):  #checking all columns
