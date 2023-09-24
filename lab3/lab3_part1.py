@@ -153,7 +153,7 @@ if __name__ == "__main__":
             ]
 
     
-    testcase = test4   #modify here for other testcases
+    testcase = test2   #modify here for other testcases
     SIZE = 9
 
     for col in range(SIZE):  #checking all columns
