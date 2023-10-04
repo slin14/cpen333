@@ -39,13 +39,13 @@ def sortingWorker(firstHalf: bool) -> None:
         global sortedFirstHalf
 
         # sort first half: index 0 to (length of testcase /2) -1
-        sortedFirstHalf = mySort(testcase[0:int(len(testcase)/2)-1])
+        sortedFirstHalf = mySort(testcase[0:int(len(testcase)/2)])
     else:
         # make variable avaible outside this function's scope
         global sortedSecondHalf
 
         # sort second half: index (length of testcase /2) to (length of testcase)
-        sortedSecondHalf = mySort(testcase[int(len(testcase)/2):len(testcase)-1])
+        sortedSecondHalf = mySort(testcase[int(len(testcase)/2):len(testcase)])
 
 def mergingWorker() -> None:
     """ This function uses the two shared variables 
@@ -63,35 +63,40 @@ def mergingWorker() -> None:
     # make variable avaible outside this function's scope
     global SortedFullList
 
-    for i in range(len(testcase)):
-        if (f >= lengthFirstHalf) or (s >= lengthSecondHalf):
-            break
+    # while first half and second half have not been merged
+    while (f < lengthFirstHalf) or (s < lengthSecondHalf):
 
-        print(f"i: {i}, f: {f}, s: {s}")
         # sortedFirstHalf and sortedSecondHalf not merged yet
         if (f < lengthFirstHalf) and (s < lengthSecondHalf):
-            if (sortedFirstHalf[f] >= sortedSecondHalf[s]):
+            if (sortedFirstHalf[f] <= sortedSecondHalf[s]):
                 # merge from first half
-                SortedFullList[i] = sortedFirstHalf[f]
+                SortedFullList.append(sortedFirstHalf[f])
                 f = f+1
             else:
                 # merge from second half
-                SortedFullList[i] = sortedSecondHalf[s]
+                SortedFullList.append(sortedSecondHalf[s])
                 s = s+1
         # sortedFirstHalf merged
         elif (f >= lengthFirstHalf):
-            SortedFullList[i] = sortedSecondHalf[s]
+            SortedFullList.append(sortedSecondHalf[s])
             s = s+1
         # sortedSecondHalf merged
-        else:
-            SortedFullList[i] = sortedFirstHalf[f]
+        elif (s >= lengthSecondHalf):
+            SortedFullList.append(sortedFirstHalf[f])
             f = f+1
 
 
 
 if __name__ == "__main__":
     #shared variables
-    testcase = [8,5,7,7,4,1,3,2]
+    #testcase = [3,2,1]
+    #testcase = [7,6,1]
+    #testcase = []
+    #testcase = [2]
+    #testcase = [3,8,5,7,7,4,1,3,2]
+    #testcase = [8,5,7,7,4,1,3,2]
+    testcase =  [12, -1, 7, 7, 3, 50, 6, 8]
+    print("test case is: ", testcase)
     sortedFirstHalf: list = []
     sortedSecondHalf: list = []
     SortedFullList: list = []
@@ -109,7 +114,8 @@ if __name__ == "__main__":
     t2.join()
     t3.join()
     
-
+    print("first half is: ", sortedFirstHalf)
+    print("second half is: ", sortedSecondHalf)
 
     #as a simple test, printing the final sorted list
     print("The final sorted list is ", SortedFullList)
