@@ -3,24 +3,6 @@
 
 import threading
 
-def mySort(myList) -> list:
-    # using bubble sort algorithm
-    length = len(myList)
-
-    for i in range(length):
-        # flag to break if nothing is left to sort
-        sorted = True
-
-        for j in range(length - i - 1):
-            # swap adjacent values if they are out of order
-            if myList[j] > myList[j + 1]:
-                myList[j], myList[j + 1] = myList[j + 1], myList[j]
-                sorted = False
-
-        if sorted:
-            break
-
-    return myList 
 
 def sortingWorker(firstHalf: bool) -> None:
     """
@@ -34,6 +16,26 @@ def sortingWorker(firstHalf: bool) -> None:
        The sorting is ascending and you can choose any
        sorting algorithm of your choice and code it.
     """
+    # Inner function to sort a list
+    def mySort(myList) -> list:
+        # using bubble sort algorithm
+        length = len(myList)
+    
+        for i in range(length):
+            # flag to break if nothing is left to sort
+            sorted = True
+    
+            for j in range(length - i - 1):
+                # swap adjacent values if they are out of order
+                if myList[j] > myList[j + 1]:
+                    myList[j], myList[j + 1] = myList[j + 1], myList[j]
+                    sorted = False
+    
+            if sorted:
+                break
+    
+        return myList 
+
     if (firstHalf):
         # make variable avaible outside this function's scope
         global sortedFirstHalf
