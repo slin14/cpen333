@@ -94,10 +94,10 @@ if __name__ == "__main__":
     mutex = threading.Lock()  #lock for protecting data on insertion or removal
 
     #complete the producer-consumer thread creation below
-    p = threading.Thread(target=producer)
-    c = threading.Thread(target=consumer)
-    p.start()
-    c.start()
-    p.join()
-    c.join()
+    p = threading.Thread(target=producer) # create producer thread object
+    c = threading.Thread(target=consumer) # create consumer thread object
+    p.start()  # start the producer thread
+    c.start()  # start the consumer thread
+    p.join()   # wait for the producer thread to finish
+    c.join()   # wait for the consumer thread to finish
 
