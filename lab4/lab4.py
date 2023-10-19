@@ -108,12 +108,13 @@ if __name__ == "__main__":
     t1.start()
     t2 = threading.Thread(target=sortingWorker, args=(False,))
     t2.start()
-    t3 = threading.Thread(target=mergingWorker)
-    t3.start()
-
-    # join the threads
+    # join the sorted halves
     t1.join()
     t2.join()
+
+    # merge
+    t3 = threading.Thread(target=mergingWorker)
+    t3.start()
     t3.join()
     
     print("first half is: ", sortedFirstHalf)
