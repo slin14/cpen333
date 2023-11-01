@@ -1,0 +1,180 @@
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher2 eating
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher1 eating
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher1 thinking
+DEBUG: philosopher0 eating
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 eating
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 eating
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher3 thinking
+DEBUG: philosopher2 eating
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 eating
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher0 eating
+DEBUG: philosopher1 thinking
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 eating
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher3 eating
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher3 thinking
+DEBUG: philosopher2 eating
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 eating
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher0 eating
+DEBUG: philosopher1 thinking
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 eating
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher3 eating
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher3 thinking
+DEBUG: philosopher2 eating
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 eating
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher0 eating
+DEBUG: philosopher1 thinking
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher4 eating
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher3 eating
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher3 thinking
+DEBUG: philosopher2 eating
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 eating
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher2 has chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher0 eating
+DEBUG: philosopher1 thinking
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher1 has chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 eating
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 eating
+DEBUG: philosopher0 has chopstick0
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher2 has chopstick3
+DEBUG: philosopher2 eating
+DEBUG: philosopher3 thinking
+DEBUG: philosopher4 has chopstick4
+DEBUG: philosopher2 is to release chopstick3
+DEBUG: philosopher3 has chopstick3
+DEBUG: philosopher2 is to release chopstick2
+DEBUG: philosopher1 has chopstick2
+DEBUG: philosopher1 eating
+DEBUG: philosopher2 thinking
+DEBUG: philosopher1 is to release chopstick2
+DEBUG: philosopher1 is to release chopstick1
+DEBUG: philosopher0 has chopstick1
+DEBUG: philosopher0 eating
+DEBUG: philosopher1 thinking
+DEBUG: philosopher0 is to release chopstick1
+DEBUG: philosopher0 is to release chopstick0
+DEBUG: philosopher4 has chopstick0
+DEBUG: philosopher0 thinking
+DEBUG: philosopher4 eating
+DEBUG: philosopher4 is to release chopstick0
+DEBUG: philosopher4 is to release chopstick4
+DEBUG: philosopher4 thinking
+DEBUG: philosopher3 has chopstick4
+DEBUG: philosopher3 eating
+DEBUG: philosopher3 is to release chopstick4
+DEBUG: philosopher3 is to release chopstick3
+DEBUG: philosopher3 thinking
