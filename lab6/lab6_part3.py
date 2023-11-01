@@ -1,6 +1,10 @@
 #student name:   Sophie Lin
 #student number: 70196886
 
+# part 3 - odd philosopher picks up left chopstick first
+#         even philosopher picks up right chopstick first
+
+
 import multiprocessing
 import random #is used to cause some randomness 
 import time   #is used to cause some delay to simulate thinking or eating times
@@ -24,10 +28,18 @@ def philosopher(id: int, chopstick: list):
         rightChopstick = (id + 1) % 5      #5 is number of philosophers
 
         #to simplify, try statement not used here
-        chopstick[leftChopstick].acquire()
-        print(f"DEBUG: philosopher{id} has chopstick{leftChopstick}")
-        chopstick[rightChopstick].acquire()
-        print(f"DEBUG: philosopher{id} has chopstick{rightChopstick}")
+
+        # part 3 - asymmetric solution
+        if (id % 2 == 0): # even philosopher ID - pick up left first
+            chopstick[leftChopstick].acquire()
+            print(f"DEBUG: philosopher{id} has chopstick{leftChopstick}")
+            chopstick[rightChopstick].acquire()
+            print(f"DEBUG: philosopher{id} has chopstick{rightChopstick}")
+        else: # odd philosopher ID - pick up right first
+            chopstick[rightChopstick].acquire()
+            print(f"DEBUG: philosopher{id} has chopstick{rightChopstick}")
+            chopstick[leftChopstick].acquire()
+            print(f"DEBUG: philosopher{id} has chopstick{leftChopstick}")
 
         eatForAWhile()  #use this line as is
 
